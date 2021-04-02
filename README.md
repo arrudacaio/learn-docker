@@ -12,7 +12,7 @@
 
     . (ponto): Determina que o contexto para gerar a imagem vai ser da pasta que estou rodando o comando atualmente   
 
-### Para ver as imagens prontas para uso 
+### Listar as imagens prontas para uso 
 ```docker image ls``` 
 
 ---
