@@ -34,3 +34,7 @@ Caso não queira que os logs fiquem aparecendo no terminal, voce pode rodar o co
 
 ## Exibir logs de um container
 - Através do comando ```docker container logs <container_id || name_container>``` 
+
+## Remover um ou mais containers
+- Através do comando ```docker container rm <container_id>``` 
+- Só é possível remover um container que está em execução utilizando a flag **-f** que irá forçar a exclusão.
