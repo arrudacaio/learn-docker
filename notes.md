@@ -38,3 +38,15 @@ Caso não queira que os logs fiquem aparecendo no terminal, voce pode rodar o co
 ## Remover um ou mais containers
 - Através do comando ```docker container rm <container_id>``` 
 - Só é possível remover um container que está em execução utilizando a flag **-f** que irá forçar a exclusão.
+
+
+## O que acontece quando rodamos o comando: 
+  ```docker container run```
+
+1) Busca-se a imagem localmente, em um "image cache" se não encontrar a imagem, nada acontece.
+2) Então busca-se essa imagem em um repositório remoto de imagens, que por padrão é o Docker Hub
+3) É baixado a última versão da imagem (latest version), caso não especifiquemos a versão.  
+4) Um novo container baseado naquela imagem é criado e prepara-se para startar.
+5) O container recebe um *virtual ip* dentro do docker engine
+6) Abre-se a porta 80 no host e encaminha para a porta 80 no container.
+7) O container é iniciado usando o CMD da imagem (do dockerfile).
