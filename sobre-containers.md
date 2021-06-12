@@ -9,6 +9,8 @@
 
 * Para inspecionar dados referentes a um container (Usado para saber como um container foi configurado e seus metadados) 
   - ```docker container inspect <container>```
+  - Se utilizar o --format a saída será formatada usando Go Templates
+  - Ex: --format '{{.NetworkSettings.IPAddress}}' container
 
 * Ver a performance dos containers e quanto recurso da máquina eles estão consumindo
   - ```docker container inspect <container>```
@@ -34,3 +36,21 @@ Neste caso seria necessário utilizar o *sh* no lugar do bash: <br/>
 ```docker container run -it --name alpine alpine sh```
 
 Ao utilizar o *sh* não será possível rodar os comandos com o clássico gerenciador **apt**, é necessário utilizar o **apk** e através dele você poder baixar o bash, se assim quiser. 
+
+
+Batteries included but removable which basically means that the defaults are pretty easy and common to work with, but that you can change a lot of the options under the hood
+
+O docker possuí um conceito de baterias incluídas mas removíveis, o que basicamente significa que os padrões são muito fáceis e comuns de se trabalhar, mas que voce pode alterar muitas das opções. 
+
+## Checar portas disponíveis em um determinado container 
+* ```docker container port <container>```
+
+---
+<br/>
+
+## Docker Networks
+* Cada contêiner é conectado a uma rede virtual privada "bridge"
+* Cada rede virtual roteia através do firewall NAT no IP do host
+* Todos os containers conectados a rede privada dentro do host podem se comunicar com outro container sem necessitar utilizar o **--publish**. 
+  * Uma boa prática para isso é criar uma rede virtual para cada aplicação. 
+  * Ex: network "my_web_app" para os containers do mysql, nodejs.
