@@ -48,9 +48,3 @@ O docker possuí um conceito de baterias incluídas mas removíveis, o que basic
 ---
 <br/>
 
-## Docker Networks
-* Cada contêiner é conectado a uma rede virtual privada "bridge"
-* Cada rede virtual roteia através do firewall NAT no IP do host
-* Todos os containers conectados a rede privada dentro do host podem se comunicar com outro container sem necessitar utilizar o **--publish**. 
-  * Uma boa prática para isso é criar uma rede virtual para cada aplicação. 
-  * Ex: network "my_web_app" para os containers do mysql, nodejs.
