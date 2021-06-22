@@ -37,3 +37,14 @@ Uma vez conectado, o container poderá se comunicar com outros containeres que e
 
 
     Após o último comando, será listado no seu terminal um json que contém a informação de quais containers estão ativos nessa rede.
+
+
+### Exemplo de uso 2: <br/> 
+    Gostaria de criar uma network para minha aplicação web e depois criar um container que vá usar essa network.
+
+
+    1) docker network create <nome_da_rede>
+    2) docker run -d --name my_backend --network <nome_da_rede> nginx
+
+
+    Dessa forma criei uma rede e logo após criei um container que irá fazer uso dessa rede. Portanto posteriormente posso criar um container apenas para o meu front-end e usar a mesma rede que o backend está usando. 
