@@ -23,3 +23,17 @@
 ```docker network connect <ID_CONTAINER>```
 <br/> 
 Uma vez conectado, o container poderá se comunicar com outros containeres que estão conectados à rede(network)
+
+<br/> 
+
+
+### Exemplo de uso: <br/> 
+    Uma vez listado todas as redes que estão rodando no meu docker, gostaria de inspecionar uma dessas redes afim de verificar 
+    quais containers estão rodando nela: 
+
+
+    1) docker network ls
+    2) docker network inspect bridge
+
+
+    Após o último comando, será listado no seu terminal um json que contém a informação de quais containers estão ativos nessa rede.
