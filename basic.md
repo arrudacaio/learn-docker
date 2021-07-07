@@ -19,7 +19,7 @@
 
 
 ### Agora vamos criar nosso container a partir da imagem que acabamos de criar
-```docker run -d --rm --rm --name nome_container nome_imagem``` 
+```docker run -d --rm  --name nome_container nome_imagem``` 
 
 * -d : detached, significa que vamos utilizar o container em background
 
